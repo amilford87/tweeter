@@ -1,0 +1,64 @@
+#tweet-feed{
+    padding-top: 1rem;
+
+}
+
+#tweet-feed .posted-tweet{
+border-radius: 5px;
+border: 2px;
+border-style: solid;
+border-color: #eee;
+overflow: hidden;
+}
+
+#tweet-feed :hover{
+    border-color: black;
+}
+
+#tweet-feed .posted-tweet-header:hover{
+    opacity: 1;
+}
+
+#tweet-feed .posted-tweet-header{
+    background-color: rgb(151, 151, 151);
+    height: 90px;
+    opacity: 0.6;
+
+}
+
+#tweet-feed .avatar{
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin: 0.5rem;
+    border-radius: 5px;
+    border: 10px;
+}
+
+#tweet-feed .username{
+    float: right;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+    
+}
+
+#tweet-feed .name{
+    float: left;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    align-items: center;
+}
+
+#tweet-feed .tweet-content{
+    padding: 1rem;
+    height: 80px;
+}
+
+#tweet-feed .tweet-footer{
+border-top: 2px solid #d6d6d6;
+padding: 0.6rem;
+font-size: 0.7rem;
+height: 2rem;
+}
