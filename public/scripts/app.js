@@ -46,34 +46,30 @@ $(document).ready(function() {
   var $tweetForm = $('#tweet-form');
   $tweetForm.submit(function(event) {
     event.preventDefault();
-    var $tweet = $($tweetForm.children("textarea")[0]).val();
+    var $tweet = $($tweetForm.children("#compose-tweet-area")[0]).val();
     if ($tweet === null || $tweet === "" || $tweet.length > 140){
       alert("invalid tweet");
     } else{
       $.post('/tweets', $tweetForm.serialize())
     .then(populateTweets);
-    $('textarea').val("");
-    let counter = $("textarea").siblings(".counter");
+    $('#compose-tweet-area').val("");
+    let counter = $("#compose-tweet-area").siblings(".counter");
     counter[0].innerText = 140;
     }
   });
   
-function populateTweets(){
-  $.ajax('/tweets', { method: 'GET' })
-    .then(function (tweetFeed) {
-      renderTweets(tweetFeed);
-    });
+  function populateTweets(){
+    $.ajax('/tweets', { method: 'GET' })
+      .then(function (tweetFeed) {
+        renderTweets(tweetFeed);
+      });
   }
 
   populateTweets();
 
   $("#compose").click(function() {
     $("#compose-tweet").slideToggle( "slow", function() {
-      $("textarea").focus(); 
+      $("#compose-tweet-area").focus(); 
     });
   });
-
-
-
-
 });

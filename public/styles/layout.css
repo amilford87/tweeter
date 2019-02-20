@@ -28,6 +28,7 @@ main {
   width: 450px;
   margin: 0 auto;
   background-color: white;
-  padding: 2rem;;
+  padding: 2rem;
+  padding-top: 95px;
 }
 
