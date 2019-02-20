@@ -41,15 +41,25 @@ $(document).ready(function() {
     });
   }
     
-  
+  const errorMsg = $('#tweet-error');
+
   // Changing the submit button to an Ajax call to submit the tweet to the server
   var $tweetForm = $('#tweet-form');
   $tweetForm.submit(function(event) {
     event.preventDefault();
     var $tweet = $($tweetForm.children("#compose-tweet-area")[0]).val();
-    if ($tweet === null || $tweet === "" || $tweet.length > 140){
-      alert("invalid tweet");
-    } else{
+    if ($tweet === null || $tweet === "" ){
+      errorMsg.slideDown();
+      errorMsg.css('#tweet-error');
+      errorMsg.html('<i class="fas fa-exclamation"></i> Unable to post empty tweet');
+    }
+    else if ($tweet.length > 140){
+      errorMsg.slideDown();
+      errorMsg.css('#tweet-error');
+      errorMsg.html('<i class="fas fa-exclamation"></i> Tweet cannot be longer than 140 characters');
+    }
+    else{
+      errorMsg.slideUp("medium");
       $.post('/tweets', $tweetForm.serialize())
     .then(populateTweets);
     $('#compose-tweet-area').val("");
@@ -72,4 +82,9 @@ $(document).ready(function() {
       $("#compose-tweet-area").focus(); 
     });
   });
+
+  $("#compose-tweet-area").keypress(function (event){
+    errorMsg.slideUp("medium");
+  });
+
 });
