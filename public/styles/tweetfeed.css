@@ -1,27 +1,29 @@
-#tweet-feed{
+.posted-tweet{
+    
+
+}
+
+.posted-tweet{
+    border-radius: 5px;
+    border: 2px;
+    border-style: solid;
+    border-color: #eee;
+    overflow: hidden;
     padding-top: 1rem;
-
 }
 
-#tweet-feed .posted-tweet{
-border-radius: 5px;
-border: 2px;
-border-style: solid;
-border-color: #eee;
-overflow: hidden;
-}
-
-#tweet-feed :hover .posted-tweet-header{
-    opacity: 1;
-}
-
-#tweet-feed :hover{
+#tweet-feed:hover .posted-tweet{
     border-color: black;
 }
 
+#tweet-feed:hover .posted-tweet-header{
+    opacity: 1;
+}
+
+
 #tweet-feed .posted-tweet-header{
     background-color: rgb(151, 151, 151);
-    height: 90px;
+    height: 87px;
     opacity: 0.6;
 
 }
@@ -57,10 +59,10 @@ overflow: hidden;
 }
 
 #tweet-feed .tweet-footer{
-border-top: 2px solid #d6d6d6;
-padding: 0.6rem;
-font-size: 0.7rem;
-height: 2rem;
+    border-top: 2px solid #d6d6d6;
+    padding: 0.6rem;
+    font-size: 0.7rem;
+    height: 2rem;
 }
 
 #tweet-feed i{
@@ -70,6 +72,6 @@ height: 2rem;
     color: #00a087;
 }
 
-#tweet-feed :hover i{
-display: inline;
+#tweet-feed:hover i{
+    display: inline;
 }
