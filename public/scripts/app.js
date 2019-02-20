@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+  function escape(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+  
+  
   function createTweetElement(object){
     let tweetName = object.user.name;
     let avatar = object.user.avatars.regular;
@@ -8,12 +15,12 @@ $(document).ready(function() {
     let footerText = object.created_at;
     const newTweet = $('<article class="posted-tweet">').append(
         `<header class="posted-tweet-header">
-          <img class="avatar" src="${avatar}">
-          <h1 class="name">${tweetName}</h1>
-          <p class="username">${handle}</p>
+          <img class="avatar" src="${escape(avatar)}">
+          <h1 class="name">${escape(tweetName)}</h1>
+          <p class="username">${escape(handle)}</p>
         </header>
         <p class="tweet-content">
-          ${tweetText}
+          ${escape(tweetText)}
         </p>
         <footer class="tweet-footer">
           ${footerText}
@@ -43,7 +50,7 @@ $(document).ready(function() {
     if ($tweet === null || $tweet === "" || $tweet.length > 140){
       alert("invalid tweet");
     } else{
-    $.post('/tweets', $tweetForm.serialize())
+      $.post('/tweets', $tweetForm.serialize())
     .then(populateTweets);
     $('textarea').val("");
     let counter = $("textarea").siblings(".counter");
@@ -59,5 +66,14 @@ function populateTweets(){
   }
 
   populateTweets();
+
+  $("#compose").click(function() {
+    $("#compose-tweet").slideToggle( "slow", function() {
+      $("textarea").focus(); 
+    });
+  });
+
+
+
 
 });

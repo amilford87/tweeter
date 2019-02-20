@@ -19,3 +19,21 @@
     line-height: 80px;
     font-size: 2rem;
 }
+
+#nav-bar #compose{
+    float: right;
+    background-color: #e8fdff;
+    border-radius: 5px;
+    color: #00a087;
+    border: 1px solid black;
+    height: 60px;
+    width: 120px;
+    margin: 0.5rem;
+    outline: none;
+}
+
+#nav-bar:hover #compose{
+    background-color: white;
+    color: black;
+    outline: none;
+}
