@@ -11,12 +11,12 @@ border-color: #eee;
 overflow: hidden;
 }
 
-#tweet-feed :hover{
-    border-color: black;
+#tweet-feed :hover .posted-tweet-header{
+    opacity: 1;
 }
 
-#tweet-feed .posted-tweet-header:hover{
-    opacity: 1;
+#tweet-feed :hover{
+    border-color: black;
 }
 
 #tweet-feed .posted-tweet-header{
@@ -61,4 +61,15 @@ border-top: 2px solid #d6d6d6;
 padding: 0.6rem;
 font-size: 0.7rem;
 height: 2rem;
+}
+
+#tweet-feed i{
+    float: right;
+    padding-right: 5px;
+    display: none;
+    color: #00a087;
+}
+
+#tweet-feed :hover i{
+display: inline;
 }
