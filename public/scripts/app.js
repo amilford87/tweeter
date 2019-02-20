@@ -27,6 +27,7 @@ $(document).ready(function() {
     
     
   function renderTweets(tweets) {
+    $('#tweet-feed').empty();
     tweets.forEach(function(element){
       var $tweet= createTweetElement(element);
       $('#tweet-feed').prepend($tweet);
