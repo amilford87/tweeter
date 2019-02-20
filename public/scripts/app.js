@@ -80,4 +80,14 @@ $(document).ready(function() {
   }
     
   renderTweets(data);
+
+  // Changing the submit button to an Ajax call to submit the tweet to the server
+  var $tweetButton = $('#tweet-button');
+  $tweetButton.submit(function(event) {
+  event.preventDefault();
+  $.post('/tweets', $tweetButton.serialize());
+  });
+
+
+
 });

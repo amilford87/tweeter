@@ -46,9 +46,9 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="POST">
+        <form action="/tweets/" method="POST" id="tweet-button">
           <textarea name="text" id="textarea" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
+          <input type="submit" value="Tweet"></button>
           <span class="counter">140</span>
         </form>
       </section>
@@ -56,7 +56,7 @@
         <article class="posted-tweet">
           <header class="posted-tweet-header">
             <img class="avatar" src="https://pbs.twimg.com/media/C8fPfXzUAAAoA7W.jpg">
-            <h2 class="name">Bill</h2>
+            <h3 class="name">Bill</h3>
             <p class="username">@example</p>
           </header>
           <p class="tweet-content">

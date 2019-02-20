@@ -8,7 +8,7 @@
 }
 
 .posted-tweet:hover{
-    border-color: black;
+    border-color: #888888;
 }
 
 .posted-tweet:hover .posted-tweet-header{
@@ -17,7 +17,7 @@
 
 
 .posted-tweet .posted-tweet-header{
-    background-color: rgb(151, 151, 151);
+    background-color: #979797;
     height: 87px;
     opacity: 0.6;
 
@@ -35,14 +35,13 @@
 .posted-tweet .username{
     float: right;
     margin-right: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 0.7rem;
     
 }
 
 .posted-tweet .name{
     float: left;
     margin-top: 0.5rem;
-    padding-left: 0.5rem;
     font-size: 1.5rem;
     align-items: center;
 }
