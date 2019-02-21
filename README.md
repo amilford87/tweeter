@@ -7,6 +7,13 @@ Tweeter is a simple, single-page Twitter clone.
 - See when tweets were posted
 - Be a part of the conversation by posting tweets and seeing other tweets in a timeline
 
+## Screentshots
+!["Screenshot of the Tweeter layout"](https://github.com/amilford87/tweeter/blob/master/docs/tweeter-layout.png?raw=true)
+
+!["Compose your own tweets!"](https://github.com/amilford87/tweeter/blob/master/docs/tweeter-compose-tweet.png?raw=true)
+
+!["Screenshot of Tweeter's scrolling timeline"](https://github.com/amilford87/tweeter/blob/master/docs/tweeter-scroll.png?raw=true)
+
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
