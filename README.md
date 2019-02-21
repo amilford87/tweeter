@@ -6,6 +6,7 @@ Tweeter is a simple, single-page Twitter clone.
 - Tweet up to 140 characters
 - See when tweets were posted
 - Be a part of the conversation by posting tweets and seeing other tweets in a timeline
+- Start tweeting right away with the push of the 'Compose' button!
 
 ## Screenshots
 !["Screenshot of the Tweeter layout"](https://github.com/amilford87/tweeter/blob/master/docs/tweeter-layout.png?raw=true)
