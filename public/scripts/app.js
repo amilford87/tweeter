@@ -1,24 +1,17 @@
 $(document).ready(function() {
-
+  
+  //to make sure users cannot tweet scripts that will run
   function escape(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
 
-
-
-  
+  //organizing our tweets
   function createTweetElement(object){
-    let tweetName = object.user.name;
-    let avatar = object.user.avatars.regular;
-    let handle = object.user.handle;
-    let tweetText = object.content.text;
-    let footerText = object.created_at;
-    
-    const timeDifference = (Date.now() - footerText) / 1000;
+    //Calculating the time difference for the footer  
+    const timeDifference = (Date.now() - object.created_at) / 1000;
     let timePosted;
-
     if (timeDifference < 1){
       timePosted = "Posted: Now.";
     }
@@ -41,16 +34,15 @@ $(document).ready(function() {
       timePosted = "Posted: " + Math.floor((timeDifference / 86400) / 365) + " years ago.";
     }
     
-    
-    
+    //how the tweet is presented
     const newTweet = $('<article class="posted-tweet">').append(
         `<header class="posted-tweet-header">
-          <img class="avatar" src="${escape(avatar)}">
-          <h1 class="name">${escape(tweetName)}</h1>
-          <p class="username">${escape(handle)}</p>
+          <img class="avatar" src="${escape(object.user.avatars.regular)}">
+          <h1 class="name">${escape(object.user.name)}</h1>
+          <p class="username">${escape(object.user.handle)}</p>
         </header>
         <p class="tweet-content">
-          ${escape(tweetText)}
+          ${escape(object.content.text)}
         </p>
         <footer class="tweet-footer">
           ${timePosted}
@@ -71,6 +63,7 @@ $(document).ready(function() {
     });
   }
     
+  //When an error occurs while attempting to submit
   const errorMsg = $('#tweet-error');
 
   // Changing the submit button to an Ajax call to submit the tweet to the server
@@ -98,6 +91,12 @@ $(document).ready(function() {
     }
   });
   
+  //When user begins typing again the error goes away
+  $("#compose-tweet-area").keypress(function (event){
+    errorMsg.slideUp("medium");
+  });
+  
+  //Populate the Tweet Feed with posts
   function populateTweets(){
     $.ajax('/tweets', { method: 'GET' })
       .then(function (tweetFeed) {
@@ -107,14 +106,10 @@ $(document).ready(function() {
 
   populateTweets();
 
+  //Toggling the Compose Tweet Area via the Compose Button
   $("#compose").click(function() {
     $("#compose-tweet").slideToggle( "slow", function() {
       $("#compose-tweet-area").focus(); 
     });
   });
-
-  $("#compose-tweet-area").keypress(function (event){
-    errorMsg.slideUp("medium");
-  });
-
 });
