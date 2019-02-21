@@ -8,7 +8,7 @@
   border-style: solid;
   border-color: #eee;
   overflow: hidden;
-  padding-top: 1rem;
+	margin-top: 1rem;
 }
 
 .posted-tweet:hover{
@@ -38,7 +38,7 @@
 .posted-tweet .username{
   float: right;
   margin-right: 0.5rem;
-  margin-top: 0.7rem;  
+  margin-top: 0.65rem;  
 }
 
 .posted-tweet .name{
@@ -50,7 +50,8 @@
 
 .posted-tweet .tweet-content{
     padding: 1rem;
-    height: 80px;
+		height: 80px;
+		word-wrap: break-word;
 }
 
 .posted-tweet .tweet-footer{

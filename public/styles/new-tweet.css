@@ -3,7 +3,8 @@
   width: 100%;
   padding: 1rem;
   border-radius: 5px;
-  border: 10px;
+	border: 10px;
+	display: none;
 }
 
 section h2 {
@@ -14,7 +15,8 @@ section h2 {
 #compose-tweet-area {
   padding: 5px;
   display: block;
-  width: 100%;
+	width: 100%;
+	word-wrap: break-word;
 }
 
 input {

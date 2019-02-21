@@ -107,7 +107,8 @@ $(document).ready(function() {
   populateTweets();
 
   //Toggling the Compose Tweet Area via the Compose Button
-  $("#compose").click(function() {
+  
+  $("#compose").click(function() {  
     $("#compose-tweet").slideToggle( "slow", function() {
       $("#compose-tweet-area").focus(); 
     });
